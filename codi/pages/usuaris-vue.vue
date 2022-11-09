@@ -1,6 +1,7 @@
 <template>
     <div>
         <v-btn @click="descarregarUsuaris()">descarregar</v-btn>   
+        <v-btn @click="descarregarUsuaris2">async descarregar</v-btn> 
         <pre>
             {{usuaris}}
         </pre>
@@ -23,9 +24,8 @@ export default{
                 return resposta.json()
             })
 
-
             var self = this
-
+            
             j.then(function(dades){
                 console.log(dades)
                 self.usuaris = dades
@@ -42,6 +42,14 @@ export default{
                 console.log(usuaris)
             });
             */
+        },
+        async descarregarUsuaris2(){
+            var resposta = 
+            await fetch("https://dummyjson.com/users")
+            //console.log(resposta)
+            var dades = await resposta.json()
+            console.log(dades)
+            this.usuaris = dades.users
         }
     }
 }
