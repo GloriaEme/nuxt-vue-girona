@@ -17,5 +17,11 @@
       >
       contador component
     </nuxt-link>
+    <br>
+    <nuxt-link 
+      to="/usuaris"  
+      >
+      usuaris
+    </nuxt-link>
   </div>
 </template>
