@@ -7,7 +7,9 @@
                 :key="posicio"
             >
                 {{usuari.firstName}}
-                {{posicio+1}}/{{usuaris.length}}
+
+                <v-img v-bind:src="usuari.image"></v-img>
+
                 
                 
             </v-col>
@@ -21,8 +23,12 @@
 </template>
 <script>
 export default{
+    created(){
+        console.log("S'ha creat la pagina")
+    },
     mounted(){
         console.log(this.laClasse)
+        console.log("S'ha muntat la pagina")
         this.descarregarUsuaris()
 
     },
@@ -39,6 +45,7 @@ export default{
             var resposta = await fetch('https://dummyjson.com/users')
             var json = await resposta.json()
             this.usuaris = json.users
+            console.log(json)
 
         }
     }
