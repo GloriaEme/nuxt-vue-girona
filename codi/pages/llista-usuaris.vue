@@ -3,10 +3,13 @@
         <v-row class="fila">
             <v-col 
                 class="columna"
-                v-for="usuari in usuaris"
-                :key="usuari"
+                v-for="(usuari,posicio) in usuaris"
+                :key="posicio"
             >
-                {{usuari}}
+                {{usuari.firstName}}
+                {{posicio+1}}/{{usuaris.length}}
+                
+                
             </v-col>
         </v-row>
         <v-row>
@@ -18,11 +21,27 @@
 </template>
 <script>
 export default{
+    mounted(){
+        console.log(this.laClasse)
+        this.descarregarUsuaris()
+
+    },
     data(){
         return{
-            usuaris:["Jordi","Joan","Laura"]
+            laClasse:"columna",
+            usuaris:[],
+            jordi:"hola"
         }
     },
+    methods:{
+        async descarregarUsuaris(){
+             console.log('Descarregant usuaris...')
+            var resposta = await fetch('https://dummyjson.com/users')
+            var json = await resposta.json()
+            this.usuaris = json.users
+
+        }
+    }
 
 }
 </script>
