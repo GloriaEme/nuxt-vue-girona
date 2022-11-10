@@ -46,11 +46,11 @@ export default{
             var json = await resposta.json()
             this.usuaris = json.users
             console.log(json)
-
         }
     }
-
 }
+
+
 </script>
 
 <style>
