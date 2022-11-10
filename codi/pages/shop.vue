@@ -1,10 +1,10 @@
 <template>
     <div>
-        Porfoli
+        Shop
     </div>
 </template>
 <script>
-export default{
-    layout:"basic"
-}
+    export default{
+        layout:"basic"
+    }
 </script>

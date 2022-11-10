@@ -12,6 +12,8 @@
                 <v-col align="end">
                     <nuxt-link to="/sobre-mi">Sobre mi</nuxt-link>
                     <nuxt-link to="/contacte">Contacte</nuxt-link>
+                    <nuxt-link to="/portafoli">Portafoli</nuxt-link>
+                    <nuxt-link to="/shop">Shop</nuxt-link>
                 </v-col>
             </v-row>
         </v-container>
